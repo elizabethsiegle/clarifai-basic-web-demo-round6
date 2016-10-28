@@ -2,16 +2,10 @@
 	$(document).ready(function () {
 		initialize()
 	})
-
-	// Finding a bunch of elements in the DOM
+	//Finding a bunch of elements in the DOM
 	var app = $(".app")
-	var imageInput = $("#imageUrl");
-	var submitButton = $("#submitBtn");
-	var image = $("#image");
-	var tagsContainer = $(".tags-container");
-	var tags = $(".tags");
-	var imgUrl = $(".imageUrl");
-	var imgUrl2 = $(".formControl");
+	//ADD CODE HERE add more vars connecting to DOM here
+
 
 	submitButton.on("click", function (event) {
 		// getting the input from the image
@@ -33,8 +27,8 @@
 			}
 			else if (response) {
 				try {
-					// if we get the response display it
-					displayTag(response)									
+					// ADD CODE HERE if we get response display tag func call
+														
 				}
 				catch (error) {
 					console.log(error)
@@ -59,7 +53,7 @@
 		var image 	= 	response.results[0]
 		var tag 	= 	image.result.tag
 
-		var conceptsLength = tag.classes.length
+		var conceptsLength = //how long is the length of the tags?
 
 		// Looping through all the classes in the tag using map
 		// to get the html for each concept
@@ -69,15 +63,15 @@
 
 			return `<div class="row">
 						<div class="col-sm-12">
-							<h3>${value}</h3>
+							//ADD CODE HERE:return jquery value
 						</div>
 					</div>`
 		})
 
-		// joining all the stuff generated and throwing the html into .tags
+		//joining all the stuff generated and throwing the html into .tags
 		tags.html(concepts.join(""))
 
-		// displaying the hidden container
+		//displaying the hidden container
 		tagsContainer.show()
 
 	}
@@ -98,8 +92,8 @@
 	function initialize() {
 		var keys = getKeys() || {}
 
-		var clientId = keys["CLARIFAI_CLIENT_ID"]
-		var clientSecret = keys["CLARIFAI_CLIENT_SECRET"]
+		//ADD KEY VARS HERE
+		
 
 		if (!clientId || !clientSecret) {
 			app.html("Enter your Clarifai's Client ID and Client Secret in order to successfully run this demo. Go to developer.clarifai.com, sign up and create your application if you haven't already. You'll have to edit keys.js file to enter your credentials")
