@@ -1,11 +1,3 @@
-/*
- * index.js
- * Clarifai Basic Application demo code
- */
- /*
- * index.js
- * Clarifai Basic Application demo code
- */
 (function ($, Clarifai) {
 	$(document).ready(function () {
 		initialize()
@@ -50,11 +42,6 @@
 			}
 		})
 
-		/*
-		 * TODO
-		 * request colors for the same image from Clarifai
-		 */
-
 	})
 
 	/*
@@ -80,17 +67,6 @@
 			var prob = Number.parseFloat(tag.probs[index]);
 			var probPercentage = (prob * 100).toString() + "%";
 
-			// Assigning color for the progressBar using `assignColor`
-			var progressBarColor = assignColor(prob, index, conceptsLength)
-
-			// Generating progress bar using values and a template
-			var progressBar = `<div class="progress">
-						<div class="progress-bar progress-bar-${progressBarColor}" role="progressbar" aria-valuenow="${prob}" aria-valuemin="0" aria-valuemax="100" style="width: ${probPercentage};">
-							${prob}
-						</div>
-					</div>`
-
-			// adding class and concept information
 			return `<div class="row">
 						<div class="col-sm-12">
 							<h3>${value}</h3>
